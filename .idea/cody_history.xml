@@ -27,6 +27,59 @@
                   </llm>
                 </llm>
               </chat>
+              <chat>
+                <internalId value="e639558d-7501-4a66-b17e-e001fae1a163" />
+                <llm>
+                  <llm>
+                    <model value="anthropic/claude-3-sonnet-20240229" />
+                    <provider value="Anthropic" />
+                    <title value="Claude 3 Sonnet" />
+                  </llm>
+                </llm>
+                <messages>
+                  <list>
+                    <message>
+                      <speaker value="HUMAN" />
+                      <text value="Argument type AppThunk is not assignable to parameter type UnknownAction" />
+                    </message>
+                    <message>
+                      <speaker value="ASSISTANT" />
+                      <text value="The error &quot;Argument type AppThunk is not assignable to parameter type UnknownAction&quot; typically occurs when you're trying to dispatch an action creator function (a thunk) instead of an action object in a Redux application.&#10;&#10;In Redux, actions are plain JavaScript objects that describe what happened in the application. Action creators are functions that create and return these action objects. Thunks, on the other hand, are functions that can perform side effects (like asynchronous operations) and dispatch actions themselves.&#10;&#10;The issue here is that the function you're trying to dispatch (AppThunk) is not an action object, but rather a thunk function. To resolve this error, you need to ensure that you're dispatching the result of calling the thunk function, rather than the thunk function itself.&#10;&#10;Here's an example of how you might dispatch a thunk in a Redux application:&#10;&#10;```javascript&#10;// Action creator (thunk)&#10;const fetchData = () =&gt; async (dispatch) =&gt; {&#10;  try {&#10;    const response = await fetch('/api/data');&#10;    const data = await response.json();&#10;    dispatch({ type: 'FETCH_DATA_SUCCESS', payload: data });&#10;  } catch (error) {&#10;    dispatch({ type: 'FETCH_DATA_FAILURE', payload: error.message });&#10;  }&#10;};&#10;&#10;// In your component&#10;const handleFetchData = () =&gt; {&#10;  dispatch(fetchData()); // Dispatch the result of calling the thunk&#10;};&#10;```&#10;&#10;In this example, `fetchData` is a thunk function that performs an asynchronous fetch operation and dispatches actions based on the result. When you call `dispatch(fetchData())`, you're dispatching the result of calling the `fetchData` thunk, which is a function that will be executed by the Redux middleware (e.g., Redux Thunk).&#10;&#10;If you're still encountering the error after ensuring that you're dispatching the result of the thunk function, double-check your action types and reducer logic to ensure that they're correctly handling the actions dispatched by the thunk." />
+                    </message>
+                  </list>
+                </messages>
+                <updatedAt value="2024-07-26T15:53:28.9085802" />
+              </chat>
+              <chat>
+                <internalId value="53581950-a6aa-4db9-8bf3-1820850cc1b5" />
+                <llm>
+                  <llm>
+                    <model value="anthropic/claude-3-sonnet-20240229" />
+                    <provider value="Anthropic" />
+                    <title value="Claude 3 Sonnet" />
+                  </llm>
+                </llm>
+              </chat>
+              <chat>
+                <internalId value="f1a34308-e92c-49ac-bc6e-b3d22c71b05c" />
+                <llm>
+                  <llm>
+                    <model value="anthropic/claude-3-sonnet-20240229" />
+                    <provider value="Anthropic" />
+                    <title value="Claude 3 Sonnet" />
+                  </llm>
+                </llm>
+              </chat>
+              <chat>
+                <internalId value="4ad17c05-4211-4fc2-9ec4-b64206b0cce9" />
+                <llm>
+                  <llm>
+                    <model value="anthropic/claude-3-sonnet-20240229" />
+                    <provider value="Anthropic" />
+                    <title value="Claude 3 Sonnet" />
+                  </llm>
+                </llm>
+              </chat>
             </list>
           </chats>
           <defaultLlm>
